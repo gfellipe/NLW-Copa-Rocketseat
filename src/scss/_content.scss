@@ -1,0 +1,119 @@
+ul {
+  list-style: none;
+}
+
+body {
+  background: #121214 var(--bg) no-repeat top (center / cover);
+
+  * {
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+#app {
+  width: fit-content;
+  margin: auto;
+  padding-top: 52px;
+}
+
+header {
+  margin-bottom: 63px;
+  text-align: center;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  padding: 32px 23px;
+  text-align: center;
+  background-color: var(--card-bg-color);
+  border-bottom: 2px solid var(--card-color-primary);
+  border-radius: 6px;
+
+  h2 {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid var(--card-title-border-color);
+    border-radius: 6px;
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 53px;
+    color: #f7dd43;
+
+    span {
+      color: #e1e1e6;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 270px;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      + li {
+        padding-top: 24px;
+        border-top: 1px solid #323238;
+        transform: rotate(0.19deg);
+      }
+
+      strong {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 125%;
+        color: #e1e1e6;
+      }
+    }
+  }
+
+  h2:hover {
+    transform: scale(1.1);
+  }
+
+  ul li {
+    strong:hover, img:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  h2 {
+    transition: transform 0.3s;
+  }
+
+  ul li {
+    strong, img {
+      transition: transform 0.3s;
+    }
+  }
+
+  opacity: 0;
+  animation: appear .2s forwards;
+}
+
+/* o sinal de + procura um li que tenha um li anterior a ele */
+
+@keyframes appear {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
